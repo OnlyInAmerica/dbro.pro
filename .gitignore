@@ -25,4 +25,4 @@ me/deeblog/migrations/*
 
 # sensitive files #
 ###################
-settings.py
+secrets.py
