@@ -1,0 +1,16 @@
+Postgres + python
+
+https://docs.djangoproject.com/en/dev/topics/install/?from=olddocs
+
+Docs say : postgresql_psycopg2
+	pip: could not find
+
+Found this: 
+http://www.saltycrane.com/blog/2009/07/using-psycopg2-virtualenv-ubuntu-jaunty/
+
+Install dependencies
+$ sudo apt-get build-dep python-psycopg2
+Install pyscopg2 in a virtualenv
+$ virtualenv --no-site-packages myenv 
+$ source myenv/bin/activate 
+$ pip install psycopg2 

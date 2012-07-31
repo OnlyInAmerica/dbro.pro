@@ -1,0 +1,38 @@
+{% extends "blog.html" %}
+{% load thumb %}
+{% load markup %}
+
+{% block scripts %}
+	{% if posts.0.category.slug == 'earth' %}
+		{% include "osm.html" %}
+			{% block bodytag %}
+			<body onload="init();">
+			{% endblock %}
+	{% endif %}
+{% endblock %}
+
+
+		{% block content %}
+		<p>{{ item.tease|markdown }}</p>
+			{% if item.category.slug == 'earth' %}
+				<div style="background-color:black; width:100%; height:400px" id="map"></div>
+				<p style="text-align:center;">Map by <a href="http://www.openstreetmap.org">OpenStreetMap</a></p>
+			{% endif %}
+
+		<div>
+		<p>{{ item.body|markdown }}</p>
+		</div>
+
+			{% if item.category.slug == 'earth' %}
+			<div style="text-align:center">
+				<h2>BearRank!<sup>TM</sup></h2>
+				{% for x in scale %}
+				{% if x < rating %}
+				<img style="width:80px;" src="{{ STATIC_URL }}/img/icons/bear.svg"/>
+				{% else %}
+				<img style="width:80px; opacity:0.25;" src="{{ STATIC_URL }}/img/icons/bear.svg"/>
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% endif %}
+		{% endblock %}

@@ -18,6 +18,9 @@ gunicorn.conf.py
 # Static files #
 ################
 me/static/*
+static/*
+static_root/*
+media_root/*
 
 # South migrations #
 ####################
