@@ -4,9 +4,19 @@ body
 	color:#FFFFFF;
 }
 
+.container{
+	width:70%;
+}
+
 .header{
 	background:#005580;
 	margin-bottom:10px;
+}
+
+.header-inner{
+	margin-right:auto;
+	margin-left:auto;
+	width:70%;
 }
 
 .article-container{
