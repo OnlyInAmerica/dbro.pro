@@ -4,15 +4,23 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+from blog.feeds import LatestEntriesFeed
+
+
 urlpatterns = patterns('',
     # Home
     url(r'^$', 'blog.views.home', name='home'),
 
     # Read Post
-    url(r'^read/(?P<slug>[-\w]+)', 'blog.views.article'),
+    url(r'^read/(?P<slug>[-\w]+)', 'blog.views.article', name='article'),
 
     # Filter
     url(r'^filter/(?P<cat>\w+)$', 'blog.views.filter'),
+
+    # Blog RSS
+    url(r'^feed/$', LatestEntriesFeed()),
+    #url(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
+    #{'feed_dict': feeds}),
 
     # CraigPhoto!
     url(r'^photocraig', 'sandbox.views.photocraig'),

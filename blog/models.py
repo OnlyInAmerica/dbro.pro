@@ -100,7 +100,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique_for_date='publish', blank=True)
     author = models.ForeignKey(User, blank=True, null=True)
-    tease = models.TextField(blank=True)
+    tease = models.TextField(blank=True, null=True)
     body = models.TextField(blank=True, null=True)
     status = models.IntegerField(choices=STATUS_CHOICES, default=2)
     allow_comments = models.BooleanField(default=True)
@@ -114,13 +114,9 @@ class Post(models.Model):
     def __unicode__(self):
         return u'%s' % self.title
 
+    @models.permalink
     def get_absolute_url(self):
-        return ('blog_detail', None, {
-            'year': self.publish.year,
-            'month': self.publish.strftime('%b').lower(),
-            'day': self.publish.day,
-            'slug': self.slug
-        })
+        return ('article', [str(self.slug)])
 
     def get_previous_post(self):
         return self.get_previous_by_publish(status__gte=2)
