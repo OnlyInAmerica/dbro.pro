@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^$', 'blog.views.home', name='home'),
 
     # Read Post
-    url(r'^read/(\w{1,99})', 'blog.views.article'),
+    url(r'^read/(?P<slug>[-\w]+)', 'blog.views.article'),
 
     # Filter
     url(r'^filter/(?P<cat>\w+)$', 'blog.views.filter'),
