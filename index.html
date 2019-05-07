@@ -1,0 +1,91 @@
+<html>
+	<head>
+    	<title>dbro</title>
+
+    	<style>
+	    		body {
+	    			margin: 0px;
+	    		}	
+			h1   {}
+			h2 {
+				margin: 10px;
+			}
+			.text {
+				max-width: 1000px;
+			}
+			.flex-row {
+  				display: flex;
+  				justify-content: center;
+  				text-align: center;
+  				flex-direction: row;
+			}
+			.flex-col {
+  				display: flex;
+  				flex-direction: column;
+			}
+			.flex-image {
+				object-fit: scale-down;
+				object-position: 50% 50%;
+				max-width:100%;
+				max-height:70%;
+				height:auto;
+			}
+			.signature {
+				margin-top: 18px;
+				max-height: 17%;
+				padding-left: 10vw;
+				padding-right: 10vw;
+			}
+			.when-where {
+  				object-position: 50% 0%;
+				max-height: 15%;
+				padding-left: 15vw;
+				padding-right: 15vw;
+			}
+			.footer {
+				margin-bottom: 150px;
+			}
+			.padded {}
+			.padded-right {
+				padding-right: 20px;
+			}
+			.padded-left {
+				padding-left: 20px;
+			}
+			.inline-image {
+				max-width: 300px;
+				object-position: 50% 50%;
+			}
+			@media (min-width: 1025px) {
+				.h1 {
+					font-size: 2em;
+				}
+				.padded {
+					padding-left: 10vw;
+					padding-right: 10vw;
+				}
+				.text {
+					font-size: 1.2em;
+				}
+			}
+			@media (max-width: 1024px) {
+				.h1 {
+					font-size: 2.8em;
+				}
+				.padded {
+					padding-left: 10vw;
+					padding-right: 10vw;
+				}
+				.text {
+					font-size: 2em;
+				}
+			}
+			
+    	</style>
+	</head>
+	<body>
+		<div class="flex-col">
+		  <img class="flex-image" src="./dbro.png" />
+		</div>
+	</body>
+</html>
